@@ -1,6 +1,6 @@
-🛍️ E-commerce Platform (Spring Boot + Thymeleaf)
+# 🛍️ E-commerce Platform (Spring Boot + Thymeleaf)
 
-A Full-stack e-commerce web application** built with Spring Boot ,Thymeleaf and **MySQL**, designed to provide a seamless online shopping experience. This project follows industry best practices with a modular backend, secure authentication, and responsive UI.
+A **full-stack e-commerce web application** built with **Spring Boot**, **Thymeleaf**, and **MySQL**, designed to provide a seamless online shopping experience. This project follows industry best practices with a modular backend, secure authentication, and responsive UI.
 
 ---
 
@@ -78,7 +78,7 @@ mvn spring-boot:run
 
 ### 4. Access Application
 
-Open [http://localhost:8080](http://localhost:8080) in your browser.
+Open [http://localhost:80](http://localhost:80) in your browser.
 
 ---
 
