@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ShopEase | Home</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Poppins', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+</head>
+<body class="bg-white text-gray-800 font-sans">
+
+  <!-- Navbar -->
+  <nav class="absolute top-0 left-0 w-full z-10 bg-black bg-opacity-40">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center text-white">
+      <h1 class="text-2xl font-bold">ShopEase</h1>
+      <div class="space-x-4">
+        <a href="/customer-login" class="hover:underline">Login</a>
+        <a href="/customer-signup" class="bg-blue-600 px-4 py-2 rounded hover:bg-blue-700 transition">Sign Up</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section with Custom Background -->
+  <section class="relative h-screen flex items-center justify-center text-white text-center">
+    <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      alt="Hero Background" class="absolute inset-0 w-full h-full object-cover brightness-50" />
+    <div class="relative z-10 max-w-3xl px-4">
+      <h2 class="text-5xl font-extrabold mb-6 drop-shadow-lg">Elevate Your Shopping Game</h2>
+      <p class="text-xl mb-8 drop-shadow-md">Find everything you need in one place. Fast, secure, stylish.</p>
+      <div class="space-x-4">
+        <a href="/products"
+          class="bg-white text-blue-600 font-semibold px-6 py-3 rounded shadow hover:bg-gray-100 transition">Shop Now</a>
+        <a href="/customer-signup"
+          class="bg-transparent border border-white px-6 py-3 rounded hover:bg-white hover:text-blue-600 transition">Get
+          Started</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Carousel (Tailwind with Alpine.js) -->
+  <section class="relative bg-white py-10" x-data="{ slide: 1 }" x-init="setInterval(() => slide = slide === 3 ? 1 : slide + 1, 5000)">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="relative h-64 overflow-hidden rounded-lg shadow-lg">
+        <template x-if="slide === 1">
+          <img src="https://via.placeholder.com/1200x300/60A5FA/FFFFFF?text=Big+Sale+Up+to+50%25+OFF" class="w-full h-full object-cover transition duration-700">
+        </template>
+        <template x-if="slide === 2">
+          <img src="https://via.placeholder.com/1200x300/F87171/FFFFFF?text=New+Arrivals+Are+Here" class="w-full h-full object-cover transition duration-700">
+        </template>
+        <template x-if="slide === 3">
+          <img src="https://via.placeholder.com/1200x300/34D399/FFFFFF?text=Shop+Smart%2C+Shop+Easy" class="w-full h-full object-cover transition duration-700">
+        </template>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  </section>
+
+    <!-- Categories Section -->
+    <section class="bg-gradient-to-r from-blue-50 to-indigo-100 py-16">
+      <div class="max-w-7xl mx-auto px-6">
+        <h3 class="text-3xl font-bold text-center mb-12 text-indigo-800">Shop by Category</h3>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 text-center">
+          <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition transform hover:-translate-y-1 border border-indigo-100">
+            <img src="https://images.unsplash.com/photo-1617137968427-85924c800a22?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3" 
+                 class="mx-auto mb-4 w-24 h-24 object-cover rounded-full border-2 border-indigo-200" />
+            <h4 class="font-semibold text-lg text-indigo-700">Men's Fashion</h4>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition transform hover:-translate-y-1 border border-indigo-100">
+            <img src="https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3" 
+                 class="mx-auto mb-4 w-24 h-24 object-cover rounded-full border-2 border-indigo-200" />
+            <h4 class="font-semibold text-lg text-indigo-700">Women's Wear</h4>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition transform hover:-translate-y-1 border border-indigo-100">
+            <img src="https://images.unsplash.com/photo-1498049794561-7780e7231661?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3" 
+                 class="mx-auto mb-4 w-24 h-24 object-cover rounded-full border-2 border-indigo-200" />
+            <h4 class="font-semibold text-lg text-indigo-700">Electronics</h4>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition transform hover:-translate-y-1 border border-indigo-100">
+            <img src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3" 
+                 class="mx-auto mb-4 w-24 h-24 object-cover rounded-full border-2 border-indigo-200" />
+            <h4 class="font-semibold text-lg text-indigo-700">Home Decor</h4>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+
+  <!-- Featured Products Section -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <h3 class="text-3xl font-bold text-center mb-12">Featured Products</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+        <div class="bg-white rounded-lg shadow hover:shadow-lg transition transform hover:-translate-y-1">
+          <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3" class="rounded-t-lg w-full h-48 object-cover">
+          <div class="p-4">
+            <h4 class="font-bold text-lg">Smart Watch</h4>
+            <p class="text-gray-600 mt-1 mb-2">$89.99</p>
+            <a href="#" class="text-blue-600 hover:underline text-sm">View Details</a>
+          </div>
+        </div>
+        <!-- Repeat or loop with Thymeleaf -->
+        <div class="bg-white rounded-lg shadow hover:shadow-lg transition transform hover:-translate-y-1">
+          <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3" class="rounded-t-lg w-full h-48 object-cover">
+          <div class="p-4">
+            <h4 class="font-bold text-lg">Running Shoes</h4>
+            <p class="text-gray-600 mt-1 mb-2">$69.99</p>
+            <a href="#" class="text-blue-600 hover:underline text-sm">View Details</a>
+          </div>
+        </div>
+        <div class="bg-white rounded-lg shadow hover:shadow-lg transition transform hover:-translate-y-1">
+          <img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3" class="rounded-t-lg w-full h-48 object-cover">
+          <div class="p-4">
+            <h4 class="font-bold text-lg">Wireless Earbuds</h4>
+            <p class="text-gray-600 mt-1 mb-2">$49.99</p>
+            <a href="#" class="text-blue-600 hover:underline text-sm">View Details</a>
+          </div>
+        </div>
+        <div class="bg-white rounded-lg shadow hover:shadow-lg transition transform hover:-translate-y-1">
+          <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3" class="rounded-t-lg w-full h-48 object-cover">
+          <div class="p-4">
+            <h4 class="font-bold text-lg">Stylish Shirt</h4>
+            <p class="text-gray-600 mt-1 mb-2">$29.99</p>
+            <a href="#" class="text-blue-600 hover:underline text-sm">View Details</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-6 text-center">
+    <p>© 2025 ShopEase. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
